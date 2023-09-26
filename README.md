@@ -5,10 +5,14 @@ What does the `mystery()` function in the following piece of code do? Add your
 answer to this markdown file.
 
 ```javascript
-function mystery(a) {
-    if(a.length == 1) return a[0];
-    var foo = mystery(a.slice(1, a.length))
-    if(foo > a[0]) return foo;
-    else return a[0];
+function mystery(a) { // input is an array
+    if(a.length == 1) return a[0];  // if the length of the array is 1, return with the first element of the array
+    var foo = mystery(a.slice(1, a.length)) // creates a new array without the first element, then recursively calls that new array
+    // foo will equal the last element of the original array
+    if(foo > a[0]) return foo; // if the final element is greater then the first, return the final
+    else return a[0]; // else return the first element
 }
 ```
+The mystery function compares the first and the last element of an array, and returns the greater    
+
+reference - used this link to figure out what slice did - https://www.w3schools.com/jsref/jsref_slice_array.asp
