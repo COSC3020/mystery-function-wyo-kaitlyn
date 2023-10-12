@@ -5,10 +5,15 @@ What does the `mystery()` function in the following piece of code do? Add your
 answer to this markdown file.
 
 ```javascript
-function mystery(a) {
-    if(a.length == 1) return a[0];
-    var foo = mystery(a.slice(1, a.length))
-    if(foo > a[0]) return foo;
+function mystery(a) { // input is an array
+    if(a.length == 1) return a[0];  // if the length of the array is 1, return with the first element of the array
+    var foo = mystery(a.slice(1, a.length)) // creates a new array without the first element, then recursively calls that new array
+    // foo will equal the last element of the original array
+    if(foo > a[0]) return foo; // compares the current foo to the first element, and returns the larger
     else return a[0];
+    // as the function is recursively called, foo will equal the largest element
 }
 ```
+The mystery function finds the largest element in an array by recursively comparing elements, and then returns the largest element
+
+reference - used this link to figure out what slice did - https://www.w3schools.com/jsref/jsref_slice_array.asp
