@@ -9,10 +9,11 @@ function mystery(a) { // input is an array
     if(a.length == 1) return a[0];  // if the length of the array is 1, return with the first element of the array
     var foo = mystery(a.slice(1, a.length)) // creates a new array without the first element, then recursively calls that new array
     // foo will equal the last element of the original array
-    if(foo > a[0]) return foo; // if the final element is greater then the first, return the final
-    else return a[0]; // else return the first element
+    if(foo > a[0]) return foo; // compares the current foo to the first element, and returns the larger
+    else return a[0];
+    // as the function is recursively called, foo will equal the largest element
 }
 ```
-The mystery function compares the first and the last element of an array, and returns the greater    
+The mystery function finds the largest element in an array by recursively comparing elements, and then returns the largest element
 
 reference - used this link to figure out what slice did - https://www.w3schools.com/jsref/jsref_slice_array.asp
